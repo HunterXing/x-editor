@@ -11,10 +11,10 @@ function createWindow () {
     }
   })
 
-  win.loadFile(path.join(__dirname, 'index.html'))
-
+  // win.loadFile(path.join(__dirname, 'index.html'))
+  win.loadURL('http://localhost:3000')
   // 打开开发工具
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
 }
 
 app.whenReady().then(() => {
