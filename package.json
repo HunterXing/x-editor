@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "elec": "electron-forge start",
-    "dev": "nodemon --watch src/* --exec \"yarn run start\"",
+    "dev": "nodemon --watch src/* --exec \"yarn start\"",
     "start": "concurrently \"wait-on http://localhost:3000 && electron-forge start\" \"yarn run react-dev\"",
     "package": "electron-forge package",
     "make": "electron-forge make",
