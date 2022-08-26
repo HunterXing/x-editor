@@ -1,0 +1,53 @@
+{
+  "name": "x-editor",
+  "version": "1.0.0",
+  "description": "Markdown editor on desktop",
+  "main": "src/elec/main.js",
+  "author": "Xing Heng",
+  "license": "MIT",
+  "scripts": {
+    "elec": "electron-forge start",
+    "start": "nodemon --watch src/* --exec \"yarn elec\"",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.65",
+    "@electron-forge/maker-deb": "^6.0.0-beta.65",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.65",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.65",
+    "@electron-forge/maker-zip": "^6.0.0-beta.65",
+    "electron": "^20.1.0",
+    "nodemon": "^2.0.19"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "x_editor"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
